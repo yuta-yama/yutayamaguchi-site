@@ -1,9 +1,10 @@
 ---
 title: Freedom to Marry - Until We Could
 description: ""
-order: 3
-cover: /stills/until-we-could/01.jpg
+order: 4
+cover: /stills/until-we-could/cover.jpg
 stills:
+  - /stills/until-we-could/cover.jpg
   - /stills/until-we-could/01.jpg
   - /stills/until-we-could/02.jpg
   - /stills/until-we-could/03.jpg

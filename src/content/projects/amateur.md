@@ -1,9 +1,10 @@
 ---
 title: amateur
 description: ""
-order: 27
-cover: /stills/amateur/01.jpg
+order: 28
+cover: /stills/amateur/cover.jpg
 stills:
+  - /stills/amateur/cover.jpg
   - /stills/amateur/01.jpg
   - /stills/amateur/02.jpg
   - /stills/amateur/03.jpg

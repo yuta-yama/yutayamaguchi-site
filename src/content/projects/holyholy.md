@@ -1,9 +1,10 @@
 ---
 title: Orenda Fink - Holy Holy
 description: ""
-order: 22
-cover: /stills/holyholy/01.jpg
+order: 23
+cover: /stills/holyholy/cover.jpg
 stills:
+  - /stills/holyholy/cover.jpg
   - /stills/holyholy/01.jpg
   - /stills/holyholy/02.jpg
   - /stills/holyholy/03.jpg

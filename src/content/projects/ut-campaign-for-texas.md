@@ -1,9 +1,10 @@
 ---
 title: University of Texas - Campaign for Texas
 description: ""
-order: 14
-cover: /stills/ut-campaign-for-texas/01.jpg
+order: 15
+cover: /stills/ut-campaign-for-texas/cover.jpg
 stills:
+  - /stills/ut-campaign-for-texas/cover.jpg
   - /stills/ut-campaign-for-texas/01.jpg
   - /stills/ut-campaign-for-texas/02.jpg
   - /stills/ut-campaign-for-texas/03.jpg

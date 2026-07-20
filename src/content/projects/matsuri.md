@@ -1,9 +1,10 @@
 ---
 title: Matsuri
 description: ""
-order: 24
-cover: /stills/matsuri/01.jpg
+order: 25
+cover: /stills/matsuri/cover.jpg
 stills:
+  - /stills/matsuri/cover.jpg
   - /stills/matsuri/01.jpg
   - /stills/matsuri/02.jpg
   - /stills/matsuri/03.jpg

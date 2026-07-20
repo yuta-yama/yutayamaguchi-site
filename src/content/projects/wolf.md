@@ -1,9 +1,10 @@
 ---
 title: Wolf
 description: ""
-order: 28
-cover: /stills/wolf/01.jpg
+order: 29
+cover: /stills/wolf/cover.jpg
 stills:
+  - /stills/wolf/cover.jpg
   - /stills/wolf/01.jpg
   - /stills/wolf/02.jpg
   - /stills/wolf/03.jpg

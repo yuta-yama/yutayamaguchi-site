@@ -1,9 +1,10 @@
 ---
 title: "MTV Artist to Watch - Echosmith - \"Cool Kids\""
 description: ""
-order: 11
-cover: /stills/echosmith-cool-kids/01.jpg
+order: 12
+cover: /stills/echosmith-cool-kids/cover.jpg
 stills:
+  - /stills/echosmith-cool-kids/cover.jpg
   - /stills/echosmith-cool-kids/01.jpg
   - /stills/echosmith-cool-kids/02.jpg
   - /stills/echosmith-cool-kids/03.jpg

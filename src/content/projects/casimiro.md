@@ -1,9 +1,10 @@
 ---
 title: Casimiro
 description: ""
-order: 18
-cover: /stills/casimiro/01.jpg
+order: 19
+cover: /stills/casimiro/cover.jpg
 stills:
+  - /stills/casimiro/cover.jpg
   - /stills/casimiro/01.jpg
   - /stills/casimiro/02.jpg
   - /stills/casimiro/03.jpg

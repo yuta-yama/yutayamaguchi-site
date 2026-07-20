@@ -1,9 +1,10 @@
 ---
 title: Cloudy All Day
 description: ""
-order: 17
-cover: /stills/cloudy-all-day/01.jpg
+order: 18
+cover: /stills/cloudy-all-day/cover.jpg
 stills:
+  - /stills/cloudy-all-day/cover.jpg
   - /stills/cloudy-all-day/01.jpg
   - /stills/cloudy-all-day/02.jpg
   - /stills/cloudy-all-day/03.jpg

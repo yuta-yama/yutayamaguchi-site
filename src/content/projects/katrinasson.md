@@ -1,9 +1,10 @@
 ---
 title: "Katrina's Son"
 description: ""
-order: 29
-cover: /stills/katrinasson/01.jpg
+order: 30
+cover: /stills/katrinasson/cover.jpg
 stills:
+  - /stills/katrinasson/cover.jpg
   - /stills/katrinasson/01.jpg
   - /stills/katrinasson/02.jpg
   - /stills/katrinasson/03.jpg

@@ -1,9 +1,10 @@
 ---
 title: Dell - Mike Shinoda - Personal Achievement
 description: ""
-order: 6
-cover: /stills/dell-mike-shinoda/01.png
+order: 7
+cover: /stills/dell-mike-shinoda/cover.jpg
 stills:
+  - /stills/dell-mike-shinoda/cover.jpg
   - /stills/dell-mike-shinoda/01.png
   - /stills/dell-mike-shinoda/02.png
   - /stills/dell-mike-shinoda/03.png

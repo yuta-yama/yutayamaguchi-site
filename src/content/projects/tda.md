@@ -1,9 +1,10 @@
 ---
 title: "Texas Department of Agriculture - \"Go Texan\""
 description: ""
-order: 15
-cover: /stills/tda/01.jpg
+order: 16
+cover: /stills/tda/cover.jpg
 stills:
+  - /stills/tda/cover.jpg
   - /stills/tda/01.jpg
   - /stills/tda/02.jpg
   - /stills/tda/03.jpg

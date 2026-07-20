@@ -1,9 +1,10 @@
 ---
 title: Caring for Cambodia
 description: ""
-order: 10
-cover: /stills/caring-for-cambodia/01.jpg
+order: 11
+cover: /stills/caring-for-cambodia/cover.jpg
 stills:
+  - /stills/caring-for-cambodia/cover.jpg
   - /stills/caring-for-cambodia/01.jpg
   - /stills/caring-for-cambodia/02.jpg
   - /stills/caring-for-cambodia/03.jpg

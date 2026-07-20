@@ -1,9 +1,10 @@
 ---
 title: Slacker 2011 - Last Scene
 description: ""
-order: 19
-cover: /stills/slacker-2011/01.jpg
+order: 20
+cover: /stills/slacker-2011/cover.jpg
 stills:
+  - /stills/slacker-2011/cover.jpg
   - /stills/slacker-2011/01.jpg
   - /stills/slacker-2011/02.jpg
   - /stills/slacker-2011/03.jpg

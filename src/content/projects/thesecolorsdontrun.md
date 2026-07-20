@@ -1,9 +1,10 @@
 ---
 title: "These Colors Don't Run"
 description: ""
-order: 2
-cover: /stills/thesecolorsdontrun/01.jpg
+order: 3
+cover: /stills/thesecolorsdontrun/cover.jpg
 stills:
+  - /stills/thesecolorsdontrun/cover.jpg
   - /stills/thesecolorsdontrun/01.jpg
   - /stills/thesecolorsdontrun/02.jpg
   - /stills/thesecolorsdontrun/03.jpg

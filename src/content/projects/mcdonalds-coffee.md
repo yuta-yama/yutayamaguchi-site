@@ -1,9 +1,10 @@
 ---
 title: "McDonald's - Sustainability Coffee in Columbia"
 description: ""
-order: 8
-cover: /stills/mcdonalds-coffee/01.jpg
+order: 9
+cover: /stills/mcdonalds-coffee/cover.jpg
 stills:
+  - /stills/mcdonalds-coffee/cover.jpg
   - /stills/mcdonalds-coffee/01.jpg
   - /stills/mcdonalds-coffee/02.jpg
   - /stills/mcdonalds-coffee/03.jpg

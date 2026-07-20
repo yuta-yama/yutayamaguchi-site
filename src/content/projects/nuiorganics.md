@@ -1,9 +1,10 @@
 ---
 title: Nui Organics - Time Flies
 description: ""
-order: 25
-cover: /stills/nuiorganics/01.jpg
+order: 26
+cover: /stills/nuiorganics/cover.jpg
 stills:
+  - /stills/nuiorganics/cover.jpg
   - /stills/nuiorganics/01.jpg
   - /stills/nuiorganics/02.jpg
   - /stills/nuiorganics/03.jpg

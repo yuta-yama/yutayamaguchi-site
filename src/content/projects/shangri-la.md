@@ -1,9 +1,10 @@
 ---
 title: "Texas Environmental Excellence Awards - \"Shangri La\""
 description: ""
-order: 16
-cover: /stills/shangri-la/01.jpg
+order: 17
+cover: /stills/shangri-la/cover.jpg
 stills:
+  - /stills/shangri-la/cover.jpg
   - /stills/shangri-la/01.jpg
   - /stills/shangri-la/02.jpg
   - /stills/shangri-la/03.jpg

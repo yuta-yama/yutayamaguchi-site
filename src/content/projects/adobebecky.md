@@ -1,9 +1,10 @@
 ---
 title: Adobe - Becky Murphy
 description: ""
-order: 13
-cover: /stills/adobebecky/01.jpg
+order: 14
+cover: /stills/adobebecky/cover.jpg
 stills:
+  - /stills/adobebecky/cover.jpg
   - /stills/adobebecky/01.jpg
   - /stills/adobebecky/02.jpg
   - /stills/adobebecky/03.jpg

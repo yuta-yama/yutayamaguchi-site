@@ -1,9 +1,10 @@
 ---
 title: Snap Kitchen - In-Store Videos
 description: ""
-order: 21
-cover: /stills/snap-kitchen/01.jpg
+order: 22
+cover: /stills/snap-kitchen/cover.jpg
 stills:
+  - /stills/snap-kitchen/cover.jpg
   - /stills/snap-kitchen/01.jpg
   - /stills/snap-kitchen/02.jpg
   - /stills/snap-kitchen/03.jpg

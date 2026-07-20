@@ -2,8 +2,9 @@
 title: "Maude"
 description: "Narrative short. Sundance 2018, SXSW 2018, Vimeo Staff Pick, Short of the Week."
 order: 2
-cover: /stills/maude/01.jpg
+cover: /stills/maude/cover.jpg
 stills:
+  - /stills/maude/cover.jpg
   - /stills/maude/01.jpg
 vimeo: "366624013"
 links:

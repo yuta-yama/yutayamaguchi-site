@@ -1,9 +1,10 @@
 ---
 title: Dell - ProDeploy Enterprise Suite
 description: ""
-order: 7
-cover: /stills/dell-prodeploy-enterprise-suite/01.jpg
+order: 8
+cover: /stills/dell-prodeploy-enterprise-suite/cover.jpg
 stills:
+  - /stills/dell-prodeploy-enterprise-suite/cover.jpg
   - /stills/dell-prodeploy-enterprise-suite/01.jpg
   - /stills/dell-prodeploy-enterprise-suite/02.jpg
   - /stills/dell-prodeploy-enterprise-suite/03.jpg

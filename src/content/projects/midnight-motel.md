@@ -1,9 +1,10 @@
 ---
 title: Midnight Motel
 description: ""
-order: 26
-cover: /stills/midnight-motel/01.jpg
+order: 27
+cover: /stills/midnight-motel/cover.jpg
 stills:
+  - /stills/midnight-motel/cover.jpg
   - /stills/midnight-motel/01.jpg
   - /stills/midnight-motel/02.jpg
   - /stills/midnight-motel/03.jpg

@@ -1,9 +1,10 @@
 ---
 title: Dell - Venue Tablets
 description: ""
-order: 5
-cover: /stills/dell-venue-tablets/01.jpg
+order: 6
+cover: /stills/dell-venue-tablets/cover.jpg
 stills:
+  - /stills/dell-venue-tablets/cover.jpg
   - /stills/dell-venue-tablets/01.jpg
   - /stills/dell-venue-tablets/02.jpg
   - /stills/dell-venue-tablets/03.jpg

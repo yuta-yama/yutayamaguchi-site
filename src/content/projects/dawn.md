@@ -1,9 +1,10 @@
 ---
 title: dawn.
 description: ""
-order: 23
-cover: /stills/dawn/01.jpg
+order: 24
+cover: /stills/dawn/cover.jpg
 stills:
+  - /stills/dawn/cover.jpg
   - /stills/dawn/01.jpg
   - /stills/dawn/02.jpg
   - /stills/dawn/03.jpg

@@ -2,8 +2,9 @@
 title: Yuta Yamaguchi Reel
 description: ""
 order: 1
-cover: "/stills/dpreel2016/01.jpg"
+cover: /stills/dpreel2016/cover.jpg
 stills:
+  - /stills/dpreel2016/cover.jpg
   - /stills/dpreel2016/01.jpg
 vimeo: "204635110"
 ---

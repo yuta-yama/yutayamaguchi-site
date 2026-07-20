@@ -1,9 +1,10 @@
 ---
 title: "Jazz Abroad: G.G. - A Jazz Trio"
 description: ""
-order: 4
-cover: /stills/jazz-abroad/01.jpg
+order: 5
+cover: /stills/jazz-abroad/cover.jpg
 stills:
+  - /stills/jazz-abroad/cover.jpg
   - /stills/jazz-abroad/01.jpg
   - /stills/jazz-abroad/02.jpg
   - /stills/jazz-abroad/03.jpg

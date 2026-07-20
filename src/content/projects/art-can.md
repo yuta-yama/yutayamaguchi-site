@@ -1,9 +1,10 @@
 ---
 title: "Texas Cultural Trust - \"Art Can\""
 description: ""
-order: 12
-cover: /stills/art-can/01.jpg
+order: 13
+cover: /stills/art-can/cover.jpg
 stills:
+  - /stills/art-can/cover.jpg
   - /stills/art-can/01.jpg
   - /stills/art-can/02.jpg
   - /stills/art-can/03.jpg

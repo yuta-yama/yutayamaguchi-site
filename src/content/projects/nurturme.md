@@ -1,9 +1,10 @@
 ---
 title: NurturMe
 description: ""
-order: 9
-cover: /stills/nurturme/01.png
+order: 10
+cover: /stills/nurturme/cover.jpg
 stills:
+  - /stills/nurturme/cover.jpg
   - /stills/nurturme/01.png
   - /stills/nurturme/02.png
   - /stills/nurturme/03.png
