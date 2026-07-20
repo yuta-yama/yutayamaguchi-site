@@ -152,8 +152,9 @@ p {
   color: inherit;
 }
 
+/* Match Squarespace homepage banners (~2.35:1 / padding-bottom ~42.55%) */
 .card-media {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 235 / 100;
   overflow: hidden;
   background: #e8e4dc;
 }
@@ -162,6 +163,7 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
 .card-body {

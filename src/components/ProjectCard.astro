@@ -7,13 +7,15 @@ interface Props {
 }
 
 const { href, title, cover, meta } = Astro.props;
+// Cache-bust so CDN/browsers don't keep pre-fix thumbnail files
+const coverSrc = cover ? `${cover}?v=2` : "";
 ---
 
 <a class="card" href={href}>
   <div class="card-media">
     {
-      cover ? (
-        <img src={cover} alt={title} loading="lazy" decoding="async" />
+      coverSrc ? (
+        <img src={coverSrc} alt={title} loading="lazy" decoding="async" />
       ) : (
         <div style="width:100%;height:100%;background:linear-gradient(135deg,#ddd8cf,#c9bfb2)" />
       )
