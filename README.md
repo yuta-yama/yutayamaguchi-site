@@ -38,24 +38,28 @@ While the old site is still live:
 npm run export
 ```
 
-## Cloudflare Pages deploy
+## Live
 
-1. Push repo to GitHub (or connect this folder).
-2. Cloudflare Pages → Create project → connect repo.
-3. Build settings:
-   - **Root directory:** `yutayamaguchi-site`
-   - **Build command:** `npm run build`
-   - **Output directory:** `dist`
-4. Preview on `*.pages.dev`, then update DNS for `yutayamaguchi.com`.
+- **Production:** https://yutayamaguchi.pages.dev
+- **GitHub:** https://github.com/yuta-yama/yutayamaguchi-site
+- **Cloudflare Pages project:** `yutayamaguchi`
+
+Deploys on push to `main` via `.github/workflows/deploy.yml` (needs `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` repo secrets — already set).
+
+Manual deploy:
+
+```bash
+npm run build
+npx wrangler pages deploy dist --project-name=yutayamaguchi
+```
 
 ### DNS cutover (when ready)
 
-Domain is at Tucows; options:
+Domain is at Tucows; DNS currently on Squarespace. Recommended:
 
-- **A)** Move DNS to Cloudflare (recommended — you already use `yutay.dev` there), add `yutayamaguchi.com`, point to Pages.
-- **B)** Keep Tucows DNS, CNAME `www` → `<project>.pages.dev`, apex via Cloudflare redirect or CNAME flattening.
-
-Cancel Squarespace after DNS propagates and you've verified all project URLs.
+1. Cloudflare dashboard → Pages → `yutayamaguchi` → Custom domains → add `www.yutayamaguchi.com` (+ apex).
+2. Move nameservers for `yutayamaguchi.com` to Cloudflare (same account as `yutay.dev`), **or** CNAME `www` → `yutayamaguchi.pages.dev` at the current DNS host.
+3. Verify pages, then cancel Squarespace before the next renewal.
 
 ## Legacy redirects
 
