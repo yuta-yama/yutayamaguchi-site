@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import VideoEmbed from "../components/VideoEmbed.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.id.replace(/\.md$/, "") },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { title, vimeo, youtube, stills, links } = project.data;
+const slug = project.id.replace(/\.md$/, "");
+---
+
+<BaseLayout title={title} path={`/${slug}`}>
+  <h1 class="page-title">{title}</h1>
+  <VideoEmbed vimeo={vimeo} youtube={youtube} />
+  {
+    links.length > 0 && (
+      <div class="links">
+        {links.map((link) => (
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            {new URL(link).hostname.replace(/^www\./, "")}
+          </a>
+        ))}
+      </div>
+    )
+  }
+  <div class="prose">
+    <Content />
+  </div>
+  {
+    stills.length > 0 && (
+      <section class="stills" aria-label="Stills">
+        {stills.map((src) => (
+          <img src={src} alt="" loading="lazy" decoding="async" />
+        ))}
+      </section>
+    )
+  }
+</BaseLayout>

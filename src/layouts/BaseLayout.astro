@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  path?: string;
+}
+
+const {
+  title = "Yuta Yamaguchi",
+  description = "Filmmaker, Director, Director of Photography, Cinematographer, Editor — Austin, TX",
+  path = "/",
+} = Astro.props;
+
+const pageTitle =
+  title === "Yuta Yamaguchi"
+    ? "Yuta Yamaguchi — Filmmaker / Cinematographer / Austin, TX"
+    : `${title} — Yuta Yamaguchi`;
+
+const nav = [
+  { href: "/", label: "Film + Video" },
+  { href: "/contact", label: "Contact" },
+];
+
+const social = [
+  { href: "https://www.imdb.me/yutayamaguchi", label: "IMDB" },
+  { href: "https://www.instagram.com/yutay", label: "Instagram" },
+  { href: "https://vimeo.com/yutayamaguchi", label: "Vimeo" },
+  { href: "https://www.linkedin.com/in/yuta-yamaguchi-baa2147", label: "LinkedIn" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="google-site-verification" content="9MaI3eNXXIpDThAgT-gqpGn8pgQ0bGMgpvAyrYth07k" />
+    <link rel="canonical" href={`https://www.yutayamaguchi.com${path === "/" ? "" : path}`} />
+    <title>{pageTitle}</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <aside class="sidebar">
+        <a class="brand" href="/">Yuta Yamaguchi</a>
+        <nav class="nav" aria-label="Primary">
+          {
+            nav.map((item) => (
+              <a href={item.href} class:list={{ active: path === item.href }}>
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+        <div class="social" aria-label="Social links">
+          {social.map((item) => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </aside>
+      <main class="main">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

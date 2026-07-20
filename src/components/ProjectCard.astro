@@ -1,0 +1,26 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  cover?: string;
+  meta?: string;
+}
+
+const { href, title, cover, meta } = Astro.props;
+---
+
+<a class="card" href={href}>
+  <div class="card-media">
+    {
+      cover ? (
+        <img src={cover} alt={title} loading="lazy" decoding="async" />
+      ) : (
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#ddd8cf,#c9bfb2)" />
+      )
+    }
+  </div>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    {meta && <p class="card-meta">{meta}</p>}
+  </div>
+</a>
