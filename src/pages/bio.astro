@@ -7,7 +7,11 @@ if (!entry) throw new Error("Missing bio page");
 const { Content } = await render(entry);
 ---
 
-<BaseLayout title="Bio" path="/bio">
+<BaseLayout
+  title="Bio"
+  path="/bio"
+  description="Yuta Yamaguchi is a director, cinematographer, and editor in Austin, TX."
+>
   <h1 class="page-title">{entry.data.title}</h1>
   <div class="prose">
     <Content />

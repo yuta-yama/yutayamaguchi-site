@@ -2,32 +2,63 @@
 interface Props {
   vimeo?: string;
   youtube?: string;
+  poster?: string;
+  title?: string;
 }
 
-const { vimeo, youtube } = Astro.props;
+const { vimeo, youtube, poster, title = "Video" } = Astro.props;
+
+const src = vimeo
+  ? `https://player.vimeo.com/video/${vimeo}?title=0&byline=0&portrait=0&dnt=1`
+  : youtube
+    ? `https://www.youtube.com/embed/${youtube}`
+    : "";
 ---
 
 {
-  vimeo && (
+  src && (
     <div class="video-wrap">
-      <iframe
-        src={`https://player.vimeo.com/video/${vimeo}?title=0&byline=0&portrait=0`}
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-        title="Vimeo video"
-      />
+      <button class="video-facade" type="button" data-src={src} aria-label={`Play ${title}`}>
+        {poster && <img src={poster} alt="" loading="lazy" decoding="async" />}
+        <span class="play-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26">
+            <path d="M9 7.2v9.6l8.2-4.8L9 7.2z" fill="currentColor" />
+          </svg>
+        </span>
+      </button>
+      <noscript>
+        <style>
+          .video-facade {
+            display: none;
+          }
+        </style>
+        <iframe
+          src={src}
+          loading="lazy"
+          allow="fullscreen; picture-in-picture"
+          allowfullscreen
+          title={title}
+        />
+      </noscript>
     </div>
   )
 }
-{
-  !vimeo && youtube && (
-    <div class="video-wrap">
-      <iframe
-        src={`https://www.youtube.com/embed/${youtube}`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        title="YouTube video"
-      />
-    </div>
-  )
-}
+
+<script>
+  document.querySelectorAll(".video-facade").forEach((button) => {
+    if (!(button instanceof HTMLButtonElement)) return;
+    button.addEventListener("click", () => {
+      const wrap = button.closest(".video-wrap");
+      const base = button.dataset.src;
+      if (!wrap || !base) return;
+      const url = new URL(base);
+      url.searchParams.set("autoplay", "1");
+      const iframe = document.createElement("iframe");
+      iframe.src = url.toString();
+      iframe.allow = "autoplay; fullscreen; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.title = button.getAttribute("aria-label")?.replace(/^Play\s+/, "") || "Video";
+      wrap.replaceChildren(iframe);
+    });
+  });
+</script>
