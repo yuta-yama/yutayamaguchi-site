@@ -15,20 +15,26 @@ npm install
 npm run dev      # http://localhost:4321
 npm run build
 npm run preview
+npx wrangler pages dev dist   # Cloudflare Pages preview of the built site
 ```
 
 ## Content
 
 - **Projects:** `src/content/projects/<slug>.md` — frontmatter: `title`, `order`, `cover`, `stills`, `vimeo`, `youtube`, `links`
-- **Pages:** `src/content/pages/contact.md`, `bio.md`
+- **Pages:** `src/content/pages/contact.md`, `bio.md` (bio copy is also the homepage intro)
+- **Homepage:** selected works, reel, and future sections live in `src/data/home.ts`
+- **Archive:** `/archive` is the full project grid. Project URLs stay at `/<slug>`
 - **Stills:** `public/stills/<slug>/`
 
 ### Add a new project
 
 1. Create `src/content/projects/my-project.md` with frontmatter and body copy.
 2. Add stills to `public/stills/my-project/`.
-3. Set `order` to control homepage position.
-4. `npm run build`
+3. Set `order` to control position in the archive.
+4. Add the slug to `selectedWorkSlugs` in `src/data/home.ts` to feature it on the homepage.
+5. `npm run build`
+
+Future homepage sections (UT/UMAC, notes, side projects, newsletter) stay hidden until the matching lists in `src/data/home.ts` have content.
 
 ### Re-export from Squarespace
 

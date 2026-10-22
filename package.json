@@ -10,6 +10,7 @@
     "export": "python3 scripts/export_squarespace.py"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
     "astro": "^5.7.10"
   }
 }

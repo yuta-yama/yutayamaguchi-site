@@ -1,25 +1,147 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection, getEntry, render } from "astro:content";
 import ProjectCard from "../components/ProjectCard.astro";
-import { getCollection } from "astro:content";
+import VideoEmbed from "../components/VideoEmbed.astro";
+import {
+  newsletter,
+  notes,
+  reel,
+  selectedWorkSlugs,
+  sideProjects,
+  siteLinks,
+  utUmacHighlights,
+} from "../data/home";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const projects = (await getCollection("projects"))
-  .filter((p) => !p.data.draft)
-  .sort((a, b) => a.data.order - b.data.order);
+const bio = await getEntry("pages", "bio");
+if (!bio) throw new Error("Missing bio page");
+const { Content: Bio } = await render(bio);
+
+const projects = (await getCollection("projects")).filter((project) => !project.data.draft);
+const bySlug = new Map(projects.map((project) => [project.id.replace(/\.md$/, ""), project]));
+
+const selected = selectedWorkSlugs.map((slug) => {
+  const project = bySlug.get(slug);
+  if (!project) throw new Error(`Selected work not found: ${slug}`);
+  return project;
+});
+
+const showNewsletter = newsletter.enabled && newsletter.action.length > 0;
 ---
 
-<BaseLayout path="/">
-  <h1 class="page-title">Film + Video</h1>
-  <div class="grid">
+<BaseLayout
+  path="/"
+  description="Yuta Yamaguchi is a director, cinematographer, and editor in Austin, TX. Work has screened at Cannes, Sundance, SXSW, and HBO."
+  image={reel.poster}
+>
+  <div class="home">
+    <h1 class="page-title">Yuta Yamaguchi</h1>
+    <div class="prose">
+      <Bio />
+    </div>
+
+    <div class="reel">
+      <VideoEmbed vimeo={reel.vimeo} poster={reel.poster} title={reel.title} />
+    </div>
+
+    <h2 class="section-title">Selected work</h2>
+    <div class="grid grid-selected">
+      {
+        selected.map((project) => (
+          <ProjectCard
+            href={`/${project.id.replace(/\.md$/, "")}`}
+            title={project.data.title}
+            cover={project.data.cover}
+          />
+        ))
+      }
+    </div>
+    <p class="archive-link"><a href="/archive">All work</a></p>
+
+    <h2 class="section-title" id="links">Links</h2>
+    <ul class="link-row">
+      {
+        siteLinks.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+
     {
-      projects.map((project) => (
-        <ProjectCard
-          href={`/${project.id.replace(/\.md$/, "")}`}
-          title={project.data.title}
-          cover={project.data.cover}
-          meta={project.data.description}
-        />
-      ))
+      /* Future sections render only when src/data/home.ts has content.
+         UT/UMAC: utUmacHighlights. Notes: notes. Side projects: sideProjects.
+         Newsletter: set newsletter.enabled and newsletter.action. */
+    }
+    {
+      utUmacHighlights.length > 0 && (
+        <section aria-labelledby="ut-umac">
+          <h2 class="section-title" id="ut-umac">
+            UT / UMAC
+          </h2>
+          <ul class="item-list">
+            {utUmacHighlights.map((item) => (
+              <li>
+                <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
+                {item.detail && <p class="item-detail">{item.detail}</p>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+    {
+      notes.length > 0 && (
+        <section aria-labelledby="notes">
+          <h2 class="section-title" id="notes">
+            Notes
+          </h2>
+          <ul class="item-list">
+            {notes.map((item) => (
+              <li>
+                <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
+                {item.date && <p class="item-detail">{item.date}</p>}
+                {item.excerpt && <p class="item-detail">{item.excerpt}</p>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+    {
+      sideProjects.length > 0 && (
+        <section aria-labelledby="side-projects">
+          <h2 class="section-title" id="side-projects">
+            Side projects
+          </h2>
+          <ul class="item-list">
+            {sideProjects.map((item) => (
+              <li>
+                <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
+                {item.summary && <p class="item-detail">{item.summary}</p>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+    {
+      showNewsletter && (
+        <section aria-labelledby="newsletter">
+          <h2 class="section-title" id="newsletter">
+            {newsletter.heading}
+          </h2>
+          {newsletter.blurb && <p class="prose">{newsletter.blurb}</p>}
+          <form class="newsletter-form" action={newsletter.action} method="post">
+            <label class="visually-hidden" for="newsletter-email">
+              Email
+            </label>
+            <input id="newsletter-email" name="email" type="email" required autocomplete="email" placeholder="Email" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </section>
+      )
     }
   </div>
 </BaseLayout>

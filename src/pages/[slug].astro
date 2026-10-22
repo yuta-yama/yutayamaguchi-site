@@ -13,13 +13,14 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { title, vimeo, youtube, stills, links } = project.data;
+const { title, description, vimeo, youtube, stills, links, cover } = project.data;
 const slug = project.id.replace(/\.md$/, "");
+const summary = description || `${title}. Film and video by Yuta Yamaguchi.`;
 ---
 
-<BaseLayout title={title} path={`/${slug}`}>
+<BaseLayout title={title} description={summary} path={`/${slug}`} image={cover || undefined}>
   <h1 class="page-title">{title}</h1>
-  <VideoEmbed vimeo={vimeo} youtube={youtube} />
+  <VideoEmbed vimeo={vimeo} youtube={youtube} poster={cover} title={title} />
   {
     links.length > 0 && (
       <div class="links">
